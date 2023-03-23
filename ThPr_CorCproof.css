@@ -1,0 +1,42 @@
+.theorem {
+  counter-increment: theorem-counter 1;
+  counter-reset: example-counter 0;
+  background-color: rgb(39, 39, 39);
+  color: white;
+  border-radius: var(--brdrad);
+  }
+
+.theorem::before {
+
+  content: "Theorem " counter(theorem-counter) ":";
+  display: block;
+  font-weight: bold;
+  }
+
+.proof {
+  margin: calc(var(--pad) * -0.5); margin-top: var(--pad);
+  background-color: rgb(255, 255, 255);
+  color: black;	
+  border-radius: var(--brdrad);
+}
+
+.corollary {
+  counter-increment: cor-counter 1;
+  background-color: rgb(107, 107, 107);
+  color: white;
+  border-radius: 5px;
+}
+
+.corollary::before {
+  content: 'Corollary ' counter(theorem-counter) "." counter(cor-counter) ":";
+  display: block;
+  font-weight: bold;
+}
+
+
+.corproof {
+  color: black;
+  background-color: rgb(255, 255, 255);
+  margin: calc(var(--pad) * -0.5); margin-top: var(--pad);
+  border-radius: var(--brdrad);
+}

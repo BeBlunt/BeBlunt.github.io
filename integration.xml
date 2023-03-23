@@ -1,0 +1,10 @@
+<document>
+<chapter> integration </chapter>
+
+<part> by-parts </part>
+  <background> Certain functions are so difficult to look at and guess their anti-derivatives for! What do we do in such a case? We use integration by-parts, which simply breaks the function to be integrated into 2 parts and integrates them separately. </background>
+  <example>
+
+  </example>
+
+</document>

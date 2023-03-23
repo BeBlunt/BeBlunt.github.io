@@ -1,0 +1,84 @@
+:root {
+  --pad: 6px;
+  --brdline: 3px;
+  --brdrad: 5px;
+  counter-reset: chapter-counter 0;
+}
+
+h1, hgroup {
+  counter-reset: theorem-counter 0, section-counter 0;
+  text-align: center;
+}
+
+h1 {
+  counter-increment: chapter-counter 1;
+}
+
+h1::before {
+  content: counter(chapter-counter) '| ';
+}
+
+h2 {
+  counter-increment: section-counter 1;
+}
+
+h2::before {
+  content: counter(chapter-counter) '.' counter(section-counter) '| ';
+}
+
+body {
+  font-family: 'Cambria';
+  font-size: large;
+  padding: var(--pad);
+}
+
+div, footer, blockquote {
+  margin-block-end: calc(var(--pad) *2);
+  padding: var(--pad);
+}
+
+.desc {
+  border-style: dashed;
+  border-width: 1px;
+}
+
+dl {
+  background-color:honeydew;
+}
+
+dt {
+  font-weight: bold;
+}
+
+div > div {
+  margin: calc(var(--pad) * -0.5); margin-top: calc(var(--pad)*2);
+}
+
+footer {
+  background-color: rgb(230, 255, 255);
+}
+
+.tidbit {
+  background-color: rgb(255, 253, 231);
+  border-width: 0px 0px 0px var(--brdline);
+  border-style: solid;
+  border-color: rgb(115, 122, 24);
+  border-radius: var(--brdrad);
+}
+
+blockquote {
+  background-color: rgb(236, 236, 236);
+  border-left: 3px solid rgb(143, 143, 143);
+}
+
+kbd>kbd {
+  border-radius: 3px;
+  padding: 1px 2px 0;
+  background-color: rgb(241, 241, 241);
+  border: 1px solid rgb(255, 255, 255);
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 2px 3px;
+}
+
+ruby {
+  font-size: xx-large;
+}
