@@ -1,11 +1,180 @@
-<html lang="en">
+<!DOCTYPE html>
+<html lang='en'>
+
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+	
+	<link href="structure.css" rel="stylesheet" />
+	<link href="ThPr_CorCproof.css" rel="stylesheet" />
+	<link href="QAns_ExSol.css" rel="stylesheet" />
+	<link href="ShowButtons.css" rel="stylesheet" />
+	<link href="showall-button.css" rel="stylesheet" />
+
+	<meta charset="utf-8" />
+
+	<!-- linking to MathJax CDN-->
+	<script src="https://polyfill.io/v3/polyfill.min.js?features=es6" ></script >
+	<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"> </script>
+	<script>
+		MathJax = {
+			tex: {
+				inlineMath: [['$', '$'], ['\\(', '\\)']]
+			}
+		}
+	</script>
+	
 </head>
+
+<title>Integration wiki - BoiBhai</title>
+
 <body>
-    
+	
+	<section>
+	
+	<script>
+		$("<button class='show' id='sol-show'></button>").insertAfter(".example")
+	</script>
+	
+	<!-- Rounded switch ----------------------------------------------------->
+	<label class="switch">
+		<input type="checkbox" id="showall">
+		<span class="slider round"></span>
+	</label>
+
+	</section>
+
+	<!-- BODY  --------------------------------------------------------->
+	
+	<hgroup>
+		<h1>Intention</h1>
+		<p>The <strong>why</strong> behind the <strong>how</strong>'s.</p>
+	</hgroup>
+	
+	<div class="roadmap">
+		This chapter discusses <strong>why we read</strong> statistics, when and how we first realised that it was <strong>important</strong> and the <strong>pathway that lies ahead</strong> as we take on this statistical journey, and some commonplace wisdom that sounds good but <strong>makes no sense</strong> really.
+	</div>
+	
+	<section id="exponential">
+		
+		<div class="desc">
+			<h2>Discussed algorithm</h2>
+			<ol>
+				<li>Choose any point $x$ to begin from. Ensure that $ \phi' (x) \leq 0 $. Press <kbd> <kbd>Ctrl</kbd> + <kbd>T</kbd> </kbd> to test this criterion automatically. </li>
+				<li>Keep calculating $x_{n+1} = \phi(x_{n})$ for successive values of $n=1,2,\dots$ for as long as you please. When the value of $x$ seems to have become stable to a sufficient number of decimal places, you may stop (optional).</li>
+			</ol>
+		</div>
+
+		<div class="example">
+			This is an example.
+			<button class="show" id="sol-show"></button>
+			<div class="sol">
+				This is a solution.
+			</div>
+		</div>
+		
+		<blockquote>
+			A <s>fun</s> story about the exponential random variable is as follows. Once Newton asked his cat, <q>Hey man, what's up?</q> The cat replied, <q>All purrfect.</q>
+		</blockquote>
+
+		<div class='desc'>
+			Here is a <del>fun</del> <ins>cool</ins> word for you to get busy with:<br>
+			<ruby>
+				<span lang='bn'> অভি </span> <rp>(</rp> <rt>obhi</rt> <rp>)</rp>
+				<span lang='bn'> মান </span> <rp>(</rp> <rt>maan</rt> <rp>)</rp>
+			</ruby>
+		</div>
+
+		<div class="desc">
+			A fun activity you can do using the <code>RStudio Console</code> is enter <code>hiya = curve(x^2, lim=c(0,1))</code>. It returns a confirmation saying <samp>Curve plotted successfully.</samp> on the console window itself. The curve <var>hiya</var> also shows on the right-side graphic window.
+		</div>
+		
+		<div class="question">
+			This is a question.
+			<button class="show" id="ans-show"></button>
+			<div class="answer">
+				This is an answer.
+			</div>
+		</div>
+		
+		<hr>
+		
+
+		
+		<div class="theorem">
+			This is a theorem. Press <kbd>Shift</kbd> + <kbd>V</kbd> to view.
+			<button class="show" id="proof-show"></button>
+			<div class="proof">
+				This is a proof.
+			</div>
+			<div class="corollary">
+				This is a corollary.
+				<button class="show" id="corproof-show"></button>
+				<div class="corproof">
+					This is a corollary proof.
+				</div>
+			</div>
+		</div>
+
+		<div class="theorem" id="Chebyshev's Theorem">
+			This is a theorem.
+			<button class="show" id="proof-show"></button>
+			<div class="proof">
+				This is a proof.
+			</div>
+			</div>
+		
+	</section>
+	
+	<hr>
+
+	<small>Copyright Baidurya Bhattacharyya 2022</small>
+	
+	<footer>
+		Copyright Baidurya Bhattacharyya 2022
+		<address title="Adress bar!">
+			<a href="mailto:baiduryabhatta2020@gmail.com" title="My Email!">baiduryabhatta2020@gmail.com</a>
+			<a href="tel:">Phone me</a>
+		</address>
+	</footer>
+	
+	
+	<!-- scripts ------------------------------------------------------>
+	
+	<script>
+		var coll = document.getElementsByClassName("show");
+		var i;
+		
+		for (i = 0; i < coll.length; i++) {
+			coll[i].addEventListener("click", function () {
+				this.classList.toggle("show-active");
+				var content = this.nextElementSibling;
+				if (content.style.display === "block") {
+					content.style.display = "none";
+				} else {
+					content.style.display = "block";
+				}
+			});
+		}
+	</script>
+	
+	<script>
+		function showAll() {
+			// Get the checkbox
+			var checkBox = document.getElementById("showall");
+			// Get the output text
+			var text = document.getElementBy("text");
+			
+			// If the checkbox is checked, display the output text
+			if (checkBox.checked == true){
+				text.style.display = "block";
+			} else {
+				text.style.display = "none";
+			}
+		}
+	</script>
+
+	
 </body>
+
+
 </html>
